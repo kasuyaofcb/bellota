@@ -1,4 +1,6 @@
-@use "common";
 @use "reset";
+@use "common";
 @use "front-pageTemplates/css/firstView";
+@use "galleryTemplates/css/galleryTop";
+@use "galleryTemplates/css/galleryContents";
 /*# sourceMappingURL=style.css.map */

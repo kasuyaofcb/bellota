@@ -15,6 +15,8 @@ function my_scripts()
     wp_enqueue_style('style-name', get_template_directory_uri() . '/style.css', array(), '');
     // swiper JSの読み込み
     wp_enqueue_style('swiper-css', get_template_directory_uri() . 'css/swiper.min.css', array(''), '', true);
+    // swiper JSの読み込み
+    wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css');
 }
 add_action('wp_enqueue_scripts', 'my_scripts');
 

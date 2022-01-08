@@ -6,10 +6,22 @@ html {
 
 body {
   font-family: "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.5em;
 }
 
-h1 {
+.h1Text {
   color: #fff;
+  font-weight: lighter;
+  line-height: 32px;
+  font-size: 1.6rem;
+}
+
+.h2Text {
+  color: #fff;
+  font-weight: lighter;
+  line-height: 1.5;
+  font-size: 1.2rem;
 }
 
 .text--white {
