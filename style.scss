@@ -1,0 +1,10 @@
+//style.scss
+
+@charset "utf-8";
+
+//全体用CSS
+@use "common"; // ここでファーストビューのCSS(SCSS)を呼び出す。
+
+//front-page.php用CSS
+@use "reset"; // ここでリセットのCSS(SCSS)を呼び出す。
+@use "front-pageTemplates/css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。

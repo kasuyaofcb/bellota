@@ -1,0 +1,40 @@
+//firstView.scss
+
+.firstView {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  .firstViewInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .firstView__slideWrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      .slide__item {
+        width: 100%;
+      }
+      .item--pink {
+        background-color: pink;
+      }
+      .item--green {
+        background-color: green;
+      }
+      .item--blue {
+        background-color: blue;
+      }
+    }
+    .firstView__logo {
+      position: absolute;
+      bottom: 75px;
+      right: 46px;
+      transform: rotate(90deg);
+      color: #fff;
+    }
+  }
+}
