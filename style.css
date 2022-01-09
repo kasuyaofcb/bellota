@@ -1,13 +1,16 @@
-@use "reset";
-@use "common";
-@use "front-pageTemplates/css/firstView";
-@use "galleryTemplates/css/galleryTop";
-@use "galleryTemplates/css/galleryContents";
-@use "page-muchoTemplates/css/muchoTop";
-@use "page-conchaTemplates/css/conchaTop";
-@use "page-muamuaTemplates/css/muamuaTop";
-@use "page-rotiTemplates/css/rotiTop";
-/*# sourceMappingURL=style.css.map */========================================== */
+@charset "UTF-8";
+/* ==========ここからリセットCSS============= */
+/*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/* Reset box-model and set borders */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-tap-highlight-color: transparent;
+  /* 3*/
+  /* Document */
+  /* ============================================ */
   /**
            * 1. Correct the line height in all browsers.
            * 2. Prevent adjustments of font size after orientation changes in iOS.

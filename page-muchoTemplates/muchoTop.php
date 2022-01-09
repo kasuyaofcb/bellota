@@ -18,10 +18,6 @@
         <div class="shopInner__center">
             <div class="swiper-container shop__slideWrapper">
                 <div class="swiper-wrapper">
-
-
-
-
                     <div class="swiper-slide slide__item">
                         <?php
                         $image = get_field('img1', 53);
@@ -29,8 +25,7 @@
                         if ($image) {
                             echo wp_get_attachment_image($image, $size);
                         }
-                        ?>
-                    </div>
+                        ?></div>
                     <div class="swiper-slide slide__item">
                         <?php
                         $image = get_field('img2', 53);
@@ -73,7 +68,6 @@
                             delay: 1,
                         },
                         speed: 36000,
-
                     });
                 </script>
             </div>
