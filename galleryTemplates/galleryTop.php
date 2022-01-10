@@ -14,6 +14,19 @@
                     <li class="nav__item"><a href="#">SHOP</a></li>
                 </ul>
             </nav>
+            <div class="ham__nav">
+                <ul class="ham__target">
+                    <span class="target__line"></span>
+                    <span class="target__line"></span>
+                    <span class="target__line"></span>
+                </ul>
+                <nav class="globalMenuSp">
+                    <ul class="globalMenuSp__wrapper">
+                        <li class="nav__item"><a href="#" class="item__link">GALLERY</a></li>
+                        <li class="nav__item"><a href="#" class="item__link">PROFILE</a></li>
+                        <li class="nav__item"><a href="#" class="item__link">SHOP</a></li>
+                    </ul>
+            </div>
         </div>
     </div>
 </section>

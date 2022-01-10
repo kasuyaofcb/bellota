@@ -44,3 +44,14 @@ add_action('wp_enqueue_scripts', 'js_scripts');
 //     wp_enqueue_style('google-webfont-style', '//fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap');
 // }
 // add_action('wp_enqueue_scripts', 'my_scriptsfont');
+
+
+//jQuery読み込み
+
+function my_jquery()
+{
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('javascript', get_template_directory_uri() . '/js/javascript.js', array('jquery'));
+}
+
+add_action('wp_enqueue_scripts', 'my_jquery');
