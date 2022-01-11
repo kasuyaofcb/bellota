@@ -1,0 +1,166 @@
+.shop {
+  .shopInner {
+    max-width: 1280px;
+    display: flex;
+    overflow-y: hidden;
+    justify-content: center;
+    margin: 0 auto;
+    @media screen and(max-width:600px) {
+      flex-direction: column;
+    }
+    .shopInner__left {
+      position: fixed;
+      top: 96px;
+      left: 32px;
+      .shop__text {
+        .h1Text {
+          color: #000;
+        }
+        .h2Text {
+          color: #000;
+        }
+      }
+      .shop__nav {
+        margin-top: 176px;
+        font-size: 1.6rem;
+        line-height: 40px;
+        @media screen and(max-width:600px) {
+          display: none;
+        }
+      }
+      .ham__nav {
+        display: none;
+        @media screen and(max-width:600px) {
+          display: block;
+        }
+        /* ハンバーガーボタン */
+        .ham__target {
+          display: block;
+          position: fixed;
+          z-index: 3;
+          right: 30px;
+          top: 30px;
+          width: 60px;
+          height: 50px;
+          cursor: pointer;
+          text-align: center;
+
+          .target__line {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            left: 6px;
+            background: #000;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+
+            &:nth-child(1) {
+              top: 10px;
+              width: 50px;
+            }
+            &:nth-child(2) {
+              top: 25px;
+              width: 40px;
+            }
+            &:nth-child(3) {
+              top: 40px;
+              width: 30px;
+            }
+          }
+
+          /* ナビ開いてる時のボタン */
+          .active {
+            &:nth-child(1) {
+              -webkit-transform: translateY(6px);
+              -moz-transform: translateY(6px);
+              transform: translateY(6px);
+            }
+            &:nth-child(2) {
+              -webkit-transform: translateY(-4px);
+              -moz-transform: translateY(-4px);
+              transform: translateY(-4px);
+            }
+
+            &:nth-child(3) {
+              -webkit-transform: translateY(-14px);
+              -moz-transform: translateY(-14px);
+              transform: translateY(-14px);
+            }
+          }
+        }
+        .globalMenuSp {
+          position: fixed;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          color: #000;
+          background: #fff;
+          text-align: center;
+          transform: translateX(100%);
+          transition: all 0.6s;
+          width: 100%;
+
+          .globalMenuSp__wrapper {
+            background: #ccc;
+            margin: 0 auto;
+            padding: 80px 0 0;
+            width: 100%;
+            height: 100%;
+
+            .nav__item {
+              list-style-type: none;
+              font-size: 1.6rem;
+              line-height: 40px;
+              padding: 0;
+              width: 100%;
+              border-bottom: 1px solid #fff;
+
+              &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+              }
+              &:hover {
+                background: #ddd;
+              }
+
+              .item__link {
+                display: block;
+                color: #000;
+                padding: 1em 0;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        /* このクラスを、jQueryで付与・削除する */
+        .active {
+          transform: translateX(0%);
+        }
+      }
+    }
+    .shopInner__center {
+      max-width: 350px;
+      .img__wrapper {
+        .attachment-full {
+          width: 100%;
+          object-fit: none;
+        }
+      }
+      @media screen and(max-width:600px) {
+        display: none;
+      }
+    }
+    .shopInner__right {
+      position: fixed;
+      top: 80px;
+      right: 32px;
+      width: 30px;
+      .company__text {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

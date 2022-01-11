@@ -15,14 +15,5 @@
 @use "galleryTemplates/css/galleryTop"; // ここでギャラリートップのCSS(SCSS)を呼び出す。
 @use "galleryTemplates/css/galleryContents"; // ここでギャラリーコンテンツのCSS(SCSS)を呼び出す。
 
-//page-mucho.php用CSS
-@use "page-muchoTemplates/css/muchoTop"; // ここでmuchoのCSS(SCSS)を呼び出す。
-
-//page-concha.php用CSS
-@use "page-conchaTemplates/css/conchaTop"; // ここでconchaのCSS(SCSS)を呼び出す。
-
-//page-muamua.php用CSS
-@use "page-muamuaTemplates/css/muamuaTop"; // ここでmuamuaのCSS(SCSS)を呼び出す。
-
-//page-roti.php用CSS
-@use "page-rotiTemplates/css/rotiTop"; // ここでrotiのCSS(SCSS)を呼び出す。
+//page-detail***.php用CSS
+@use "page-rotiTemplates/css/details"; // ここでrotiのCSS(SCSS)を呼び出す。

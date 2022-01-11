@@ -23,13 +23,39 @@ add_action('wp_enqueue_scripts', 'my_scripts');
 //JS読み込み
 function js_scripts()
 {
-    // swiper JS読み込み
-    // wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array('script'), '', true);
 
     //JS読み込み
     wp_enqueue_script(
         'script',
         get_template_directory_uri() . '/main.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'slide',
+        get_template_directory_uri() . './js/slide.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'fancybox',
+        get_template_directory_uri() . './js/jquery.fancybox-1.3.4.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'jquery.masonry',
+        get_template_directory_uri() . './js/jquery.masonry.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'preloader',
+        get_template_directory_uri() . './js/jquery.preloader.js',
         array(),
         "1.0",
         true
