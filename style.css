@@ -4,9 +4,8 @@
 @use "galleryTemplates/css/galleryTop";
 @use "galleryTemplates/css/galleryContents";
 @use "page-rotiTemplates/css/details";
-/*# sourceMappingURL=style.css.map */ 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+@use "page-profileTemplates/css/profileTop";
+/*# sourceMappingURL=style.css.map */2 */
   -webkit-tap-highlight-color: transparent;
   /* 3*/
   /* Document */
@@ -712,5 +711,72 @@ p {
 }
 .shop .shopInner .shopInner__right .company__text {
   transform: rotate(90deg);
+}
+
+.profile {
+  text-align: center;
+  padding: 36px 32px 36px 32px;
+}
+@media screen and (max-width: 600px) {
+  .profile {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+.profile .profileInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+.profile .profileInner .address {
+  margin-top: 48px;
+}
+.profile .profileInner .address .addressWrapper .address__item {
+  margin-top: 64px;
+}
+.profile .profileInner .address .addressWrapper .address__item:first-child {
+  margin-top: 0;
+}
+.profile .profileInner .address .addressWrapper .address__item .h1Text {
+  color: #000;
+  font-size: 2.4rem;
+}
+.profile .profileInner .address .addressWrapper .address__item .item__tel {
+  margin-top: 16px;
+}
+.profile .profileInner .address .addressWrapper .address__item .item__add {
+  margin-top: 16px;
+}
+.profile .profileInner .address .addressWrapper .address__item .map__layout {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.profile .profileInner .address .addressWrapper .address__item .map__layout .item__map {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  height: 0;
+  padding-top: 75%;
+  /* 比率を4:3に固定 */
+  margin: 16px auto 0;
+}
+.profile .profileInner .address .addressWrapper .address__item .map__layout .item__map .map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.profile .profileInner .profile__title {
+  position: absolute;
+  transform: rotate(90deg);
+  font-size: 1.6rem;
+  top: 36px;
+  right: 0;
+}
+@media screen and (max-width: 600px) {
+  .profile .profileInner .profile__title {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -17,3 +17,6 @@
 
 //page-detail***.php用CSS
 @use "page-rotiTemplates/css/details"; // ここでrotiのCSS(SCSS)を呼び出す。
+
+//page-profile.php用CSS
+@use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
