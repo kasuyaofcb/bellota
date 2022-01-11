@@ -64,9 +64,5 @@ function js_scripts()
 add_action('wp_enqueue_scripts', 'js_scripts');
 
 
-// // サイト共通のフォントの読み込み
-// function my_scriptsfont()
-// {
-//     wp_enqueue_style('google-webfont-style', '//fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap');
-// }
-// add_action('wp_enqueue_scripts', 'my_scriptsfont');
+// アイキャッチ画像を有効
+add_theme_support('post-thumbnails');
