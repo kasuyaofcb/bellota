@@ -1,4 +1,4 @@
-<section class="firstView">
+<article class="firstView">
     <div class="firstViewInner">
 
         <div class="swiper-container firstView__slideWrapper">
@@ -7,7 +7,7 @@
                 <div class="swiper-slide item--green slide__item">デモ画像</div>
                 <div class="swiper-slide item--blue slide__item">デモ画像</div>
             </div>
-
+            <!-- swiper-wrapper -->
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
             <script>
@@ -27,7 +27,8 @@
                 });
             </script>
         </div>
+        <!-- swiper-container firstView__slideWrapper -->
         <h1 class="firstView__logo text--white">BULLICIO</h1>
     </div>
-
-</section>
+    <!-- firstViewInner -->
+</article>
