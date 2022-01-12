@@ -1,7 +1,8 @@
-<section class="mucho shop">
-    <div class="muchoInner shopInner">
-        <div class="shopInner__left">
-            <div class="shop__text">
+<article class="shopDetail">
+    <div class="shopDetailInner shopInner">
+
+        <div class="shopDetail__left">
+            <div class="shopDetail__text">
                 <h1 class="h1Text text__title">
                     BELLOTA MUCHO
                 </h1>
@@ -9,7 +10,7 @@
                     KYOTO-MUROMACHI
                 </h2>
             </div>
-            <ul class="shop__nav">
+            <ul class="shopDetail__nav">
                 <li><a href="#">GALLERY</a></li>
                 <li><a href="#">PROFILE</a></li>
                 <li><a href="#">SHOP</a></li>
@@ -29,7 +30,8 @@
                 </nav>
             </div>
         </div>
-        <div class="shopInner__center">
+
+        <div class="shopDetail__center">
 
             <!-- <ul class="img__wrapper">
                 <li class="slide__item">
@@ -69,178 +71,54 @@
                     ?>
                 </li>
             </ul> -->
-            <section id="body">
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i1.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i1.jpg" alt="" /></a>
-                </article>
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i2.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i2.jpg" alt="" /></a>
-                </article>
+            <section class="slide__loop" id="body">
+                <!-- 投稿タイプで写真を追加する -->
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i3.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i3.jpg" alt="" /></a>
-                </article>
+                <!-- ここでカテゴリ2の写真を出力する開始 -->
+                <?php
+                $cat_posts = get_posts(array(
+                    'post_type' => 'post', // 投稿タイプ
+                    'category' => 2, // カテゴリIDを番号で指定する場合
+                    'posts_per_page' => 10, // 表示件数
+                    'orderby' => 'date', // 表示順の基準
+                    'order' => 'DESC' // 昇順・降順
+                ));
+                global $post;
+                if ($cat_posts) : foreach ($cat_posts as $post) : setup_postdata($post); ?>
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i4.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i4.jpg" alt="" /></a>
-                </article>
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i5.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i5.jpg" alt="" /></a>
-                </article>
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i6.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i6.jpg" alt="" /></a>
-                </article>
+                        <!-- ループはじめ -->
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i7.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i7.jpg" alt="" /></a>
-                </article>
+                        <li class="contents_item img__cat2">
+                            <a href="<?php the_post_thumbnail_url('full') ?>">
+                                <?php the_post_thumbnail('full') ?></a>
+                        </li>
+                        <!-- contents_item img__cat2 -->
+                        <!-- ループおわり -->
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i8_.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i8_.jpg" alt="" /></a>
-                </article>
+                <?php endforeach;
+                endif;
+                wp_reset_postdata(); ?>
+                <!-- ここでカテゴリ2の写真を出力する終了 -->
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i8.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i8.jpg" alt="" /></a>
-                </article>
 
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i11.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i11.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i10.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i10.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i9.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i9.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i13.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i13.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i12.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i12.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i15.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i15.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i14.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i14.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/image.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/image.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i16.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i16.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i17.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i17.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i36.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i36.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i35.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i35.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i18.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i18.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i21.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i21.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i20.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i20.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i19.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i19.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i23.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i23.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i22.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i22.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i24.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i24.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i25.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i25.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i26.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i26.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i27.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i27.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i28.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i28.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i29.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i29.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i30.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i30.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i31.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i31.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i32.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i32.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i33.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i33.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i34.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i34.jpg" alt="" /></a>
-                </article>
-
-                <article id="loop">
-                    <a href="http://yamamototakashi.jp/portfolio/images/i1.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i1.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i2.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i2.jpg" alt="" /></a>
-                </article>
-
-                <article>
-                    <a href="http://yamamototakashi.jp/portfolio/images/i3.jpg" rel="group" title="WORK" class="images"><img src="http://yamamototakashi.jp/portfolio/images/i3.jpg" alt="" /></a>
-                </article>
             </section>
-
-
-
-
         </div>
-        <div class="shopInner__right">
+        <div class="shopDetail__right">
             <p class="company__text">REPRESENT.Inc</p>
         </div>
+
+
+
+
+
+
+
+
+
+
     </div>
-</section>
+    <!-- muchoInner shopInner -->
+</article>
