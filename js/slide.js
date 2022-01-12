@@ -32,15 +32,15 @@ jQuery(function(){
 	
 });
 
-jQuery(function(){
-	jQuery("#body").click(function(){
-		jQuery.isScroll = true;
+// jQuery(function(){
+// 	jQuery("div").on('click', '.fancybox-container',function(){
+// 		jQuery.isScroll = true;
 		
-		// スクロールバー非表示
-		jQuery("body").css("overflow","visible")
-	});
+// 		// スクロールバー非表示
+// 		jQuery("body").css("overflow","visible")
+// 	});
 	
-});
+// });
 
 
  

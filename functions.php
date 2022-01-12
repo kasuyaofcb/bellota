@@ -19,6 +19,8 @@ function my_scripts()
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css');
     // fancyboxの読み込み
     wp_enqueue_style('fancy-box', get_template_directory_uri() . '/jquery.fancybox.min.css', array(), '');
+    // fancyboxの読み込み
+    wp_enqueue_style('fancy-box-layout', get_template_directory_uri() . '/fancybox.css', array(), '');
 }
 add_action('wp_enqueue_scripts', 'my_scripts');
 

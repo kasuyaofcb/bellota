@@ -705,13 +705,14 @@ p {
     display: flex;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item::marker {
-  display: none;
+.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item {
+  width: 350px;
 }
-.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item .attachment-full {
+.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item .wp-post-image {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: -15px;
 }
 @media screen and (max-width: 600px) {
   .shopDetail .shopDetailInner .shopDetail__center .slide__loop {
@@ -733,7 +734,6 @@ p {
 }
 
 .fancybox-image {
-  width: 500px !important;
   height: 500px !important;
 }
 

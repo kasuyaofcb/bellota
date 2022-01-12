@@ -157,12 +157,12 @@
           display: flex;
         }
         .contents_item {
-          &::marker {
-            display: none;
-          }
-          .attachment-full {
+          width: 350px;
+
+          .wp-post-image {
             width: 100%;
             object-fit: cover;
+            margin-top: -15px;
           }
         }
         @media screen and(max-width:600px) {
@@ -188,7 +188,6 @@
   }
 }
 .fancybox-image {
-  width: 500px !important;
   height: 500px !important;
 }
 .fancybox-slide {
