@@ -1,4 +1,4 @@
-<section class="galleryTop">
+<article class="galleryTop">
     <div class="galleryTopInner">
         <div class="headerWrapper">
             <div class="header__text">
@@ -29,4 +29,4 @@
             </div>
         </div>
     </div>
-</section>
+</article>

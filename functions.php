@@ -23,8 +23,6 @@ add_action('wp_enqueue_scripts', 'my_scripts');
 //JS読み込み
 function js_scripts()
 {
-    // swiper JS読み込み
-    // wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array('script'), '', true);
 
     //JS読み込み
     wp_enqueue_script(
@@ -34,24 +32,37 @@ function js_scripts()
         "1.0",
         true
     );
+    wp_enqueue_script(
+        'slide',
+        get_template_directory_uri() . './js/slide.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'fancybox',
+        get_template_directory_uri() . './js/jquery.fancybox-1.3.4.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'jquery.masonry',
+        get_template_directory_uri() . './js/jquery.masonry.js',
+        array(),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'preloader',
+        get_template_directory_uri() . './js/jquery.preloader.js',
+        array(),
+        "1.0",
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'js_scripts');
 
 
-// // サイト共通のフォントの読み込み
-// function my_scriptsfont()
-// {
-//     wp_enqueue_style('google-webfont-style', '//fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap');
-// }
-// add_action('wp_enqueue_scripts', 'my_scriptsfont');
-
-
-//jQuery読み込み
-
-function my_jquery()
-{
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('javascript', get_template_directory_uri() . '/js/javascript.js', array('jquery'));
-}
-
-add_action('wp_enqueue_scripts', 'my_jquery');
+// アイキャッチ画像を有効
+add_theme_support('post-thumbnails');
