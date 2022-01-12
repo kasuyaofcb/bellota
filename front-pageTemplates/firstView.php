@@ -28,7 +28,7 @@
                         <li class="swiper-slide">
                             <a href=" <?php
                                         echo get_page_link(5);
-                                        ?>">">
+                                        ?>">
                                 <?php the_post_thumbnail('full') ?></a>
                         </li>
                         <!-- contents_item img__cat2 -->
@@ -44,23 +44,8 @@
             </div>
             <!-- swiper-wrapper -->
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-            <script>
-                var mySwiper = new Swiper(".swiper-container", {
-                    direction: 'vertical',
-                    allowSlidePrev: true,
-                    reverseDirection: true,
-                    effect: 'slide',
-                    slidesPerView: 1,
-                    inverse: false,
-                    loop: true,
-                    autoplay: {
-                        delay: 3000,
-                    },
-                    speed: 2000,
 
-                });
-            </script>
+
         </div>
         <!-- swiper-container firstView__slideWrapper -->
         <h1 class="firstView__logo text--white">BULLICIO</h1>
