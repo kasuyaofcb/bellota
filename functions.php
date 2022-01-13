@@ -30,7 +30,7 @@ function js_scripts()
 
     //JS読み込み
     wp_enqueue_script(
-        'script',
+        'main',
         get_template_directory_uri() . '/main.js',
         array(),
         "1.0",
@@ -46,14 +46,21 @@ function js_scripts()
     wp_enqueue_script(
         'slide',
         get_template_directory_uri() . './js/slide.js',
-        array(),
+        array('jquery'),
         "1.0",
         true
     );
     wp_enqueue_script(
         'fancybox',
-        get_template_directory_uri() . './js/jquery.fancybox.min.js',
-        array(),
+        get_template_directory_uri() . './js/jquery.fancybox-1.3.4.js',
+        array('jquery'),
+        "1.0",
+        true
+    );
+    wp_enqueue_script(
+        'pleloader',
+        get_template_directory_uri() . './js/jquery.pleloader.js',
+        array('jquery'),
         "1.0",
         true
     );
@@ -62,7 +69,7 @@ add_action('wp_enqueue_scripts', 'js_scripts');
 
 //jQuery呼び出し
 wp_deregister_script('jquery');
-wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1');
+wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', array(), '1.11.1');
 
 
 // // サイト共通のフォントの読み込み

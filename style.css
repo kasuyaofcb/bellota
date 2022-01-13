@@ -1,11 +1,11 @@
 @use "reset";
 @use "common";
+@use "fancybox";
 @use "front-pageTemplates/css/firstView";
 @use "galleryTemplates/css/galleryTop";
 @use "galleryTemplates/css/galleryContents";
 @use "page-rotiTemplates/css/details";
-/*# sourceMappingURL=style.css.map */ 1 */
-  -webkit-text-size-adjust: 100%;
+/*# sourceMappingURL=style.css.map */ext-size-adjust: 100%;
   /* 2 */
   -webkit-tap-highlight-color: transparent;
   /* 3*/
@@ -710,6 +710,7 @@ p {
 }
 .shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item .wp-post-image {
   width: 100%;
+  height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-top: -15px;

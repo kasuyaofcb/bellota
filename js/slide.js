@@ -1,5 +1,5 @@
 
-jQuery(window).on('load',function(){
+jQuery(window).load(function(){
 	// 自動スクロール
 	jQuery.autoScroll();
 	
@@ -23,7 +23,7 @@ jQuery.extend({
 
 /* 初期設定 */
 jQuery(function(){
-	jQuery("#body li").click(function(){
+	jQuery("#body li a").click(function(){
 		jQuery.isScroll = false;
 		
 		// スクロールバー非表示
@@ -67,7 +67,7 @@ jQuery(function(){
 /*scroll*/
 jQuery(window).scroll(function () {
   if(jQuery('#loop').length > 0){
-	  if(jQuery('#loop').offset().top - jQuery(window).scrollTop() < 0){
+	  if(jQuery('#loop').offset().top - jQuery(window).scrollTop() < -500){
 		jQuery(window).scrollTop(((jQuery('#loop').offset().top - jQuery(window).scrollTop())* -1) + 1);
 	  }
 	  
@@ -79,3 +79,55 @@ jQuery(window).scroll(function () {
   }
 
 });
+
+jQuery(function(){
+	jQuery("#body a.images").fancybox({
+		'padding':0,
+		'margin':0,
+		'transitionIn'	:	'fade',
+		'transitionOut'	:	'fade',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	true,
+		'overlayColor'  :   '#fff',
+		'showCloseButton'	: false,
+		'overlayOpacity':1,
+		'titlePosition' 		: 'inside',
+		'titleFormat'		: formatTitle,
+		'onClosed':function(){
+			jQuery.isScroll = true;
+			jQuery("body").css("overflow","visible");
+		}
+	});
+	
+	jQuery("#body a.vimeo").fancybox({
+		'padding':0,
+		'margin':0,
+		'transitionIn'	:	'fade',
+		'transitionOut'	:	'fade',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	true,
+		'overlayColor'  :   '#fff',
+		'showCloseButton'	: false,
+		'overlayOpacity':1,
+		'type'			: 'iframe',
+		'width'			: 960,
+		'height'		: 540,
+		'onClosed':function(){
+			jQuery.isScroll = true;
+			jQuery("body").css("overflow","visible");
+		}
+	});
+});
+
+/*photo*/
+function formatTitle(title, currentArray, currentIndex, currentOpts) {
+	if(currentIndex == currentArray.length - 1 ){
+		return '<div>' + (title && title.length ? '<b>' + title + '</b>' : '' ) + ' ' + (currentIndex + 1) + ' of ' + currentArray.length + '　<a href="javascript:void(0);" onclick="$.fancybox.prev();">PREV</a>' + ' / '+ 'NEXT' + '</div>';
+	}else if(currentIndex == 0){
+		return '<div>' + (title && title.length ? '<b>' + title + '</b>' : '' ) + ' ' + (currentIndex + 1) + ' of ' + currentArray.length + '　PREV' + ' / '+ '<a href="javascript:void(0);" onclick="$.fancybox.next();">NEXT</a>' + '</div>';
+	}else{
+		return '<div>' + (title && title.length ? '<b>' + title + '</b>' : '' ) + ' ' + (currentIndex + 1) + ' of ' + currentArray.length + '　<a href="javascript:void(0);" onclick="$.fancybox.prev();">PREV</a>' + ' / '+ '<a href="javascript:;" onclick="$.fancybox.next();">NEXT</a>' + '</div>';
+	}
+}

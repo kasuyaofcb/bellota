@@ -92,7 +92,7 @@
                         <!-- ループはじめ -->
 
                         <li class="contents_item img__cat2">
-                            <a href="<?php the_post_thumbnail_url('full') ?>">
+                            <a class="fancybox" href="<?php the_post_thumbnail_url('full') ?>">
                                 <?php the_post_thumbnail('full') ?></a>
                         </li>
                         <!-- contents_item img__cat2 -->
@@ -105,7 +105,11 @@
 
 
             </section>
+
+
         </div>
+
+
         <div class="shopDetail__right">
             <p class="company__text">REPRESENT.Inc</p>
         </div>

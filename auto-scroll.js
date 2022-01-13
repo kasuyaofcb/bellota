@@ -14,5 +14,12 @@
    const children = document.querySelector('.slide__loop').children;
    console.log(children);
    
+   let elements = document.querySelectorAll('.wp-post-image');
+
+   for(let i = 0; i< elements.length; i++){
+      elements[i].classList.add('imeges')
+   }
+ 
+   
 
 }
