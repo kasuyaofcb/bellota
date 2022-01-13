@@ -2,13 +2,16 @@
 
 @charset "utf-8";
 
+
 //リセット用CSS
 @use "reset"; // ここでリセットのCSS(SCSS)を呼び出す。
 
+
 //全体用CSS
-@use "common"; // ここでファーストビューのCSS(SCSS)を呼び出す。
+@use "common"; // ここで全体のCSS(SCSS)を呼び出す。
 
 //front-page.php用CSS
+
 @use "front-pageTemplates/css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。
 
 //page-gallery.php用CSS
@@ -20,3 +23,7 @@
 
 //page-profile.php用CSS
 @use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
+
+
+
+

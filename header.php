@@ -11,7 +11,5 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script> -->
-</head>
 <?php wp_head(); ?>
 </head>
