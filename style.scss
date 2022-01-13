@@ -2,16 +2,19 @@
 
 @charset "utf-8";
 
+
 //リセット用CSS
 @use "reset"; // ここでリセットのCSS(SCSS)を呼び出す。
 
+
 //全体用CSS
-@use "common"; // ここでファーストビューのCSS(SCSS)を呼び出す。
+@use "common"; // ここで全体のCSS(SCSS)を呼び出す。
 
 //fancybox用CSS
 @use "fancybox"; // ここでfancyboxのCSS(SCSS)を呼び出す。
 
 //front-page.php用CSS
+
 @use "front-pageTemplates/css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。
 
 //page-gallery.php用CSS
@@ -20,3 +23,10 @@
 
 //page-detail***.php用CSS
 @use "page-rotiTemplates/css/details"; // ここでrotiのCSS(SCSS)を呼び出す。
+
+//page-profile.php用CSS
+@use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
+
+
+
+
