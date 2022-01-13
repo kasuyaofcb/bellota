@@ -22,7 +22,8 @@ add_action('wp_enqueue_scripts', 'my_scripts');
 function js_scripts()
 {
     // swiper JS読み込み
-    // wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array('script'), '', true);
+    wp_enqueue_script('swiper', get_template_directory_uri() . './js/swiper.js', array('swiper-cdn'), '', true);
+    wp_enqueue_script('swiper-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js', array('script'), '', true);
 
     //JS読み込み
     wp_enqueue_script(
