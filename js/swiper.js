@@ -6,7 +6,7 @@
         direction: 'vertical',
         allowSlidePrev: true,
         reverseDirection: true,
-        effect: 'slide',
+        effect: 'fade',
         slidesPerView: 1,
         inverse: false,
         loop: true,
