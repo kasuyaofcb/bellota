@@ -1,6 +1,5 @@
-.shop {
-  .shopInner {
-    max-width: 1280px;
+.shopDetail {
+  .shopDetailInner {
     display: flex;
     overflow-y: hidden;
     justify-content: center;
@@ -8,19 +7,21 @@
     @media screen and(max-width:600px) {
       flex-direction: column;
     }
-    .shopInner__left {
+
+    .shopDetail__left {
       position: fixed;
-      top: 96px;
+      top: 80px;
       left: 32px;
-      .shop__text {
+      .shopDetail__text {
         .h1Text {
           color: #000;
+          font-size: 2.4rem;
         }
         .h2Text {
           color: #000;
         }
       }
-      .shop__nav {
+      .shopDetail__nav {
         margin-top: 176px;
         font-size: 1.6rem;
         line-height: 40px;
@@ -141,26 +142,63 @@
         }
       }
     }
-    .shopInner__center {
-      max-width: 350px;
+
+    .shopDetail__center {
+      max-width: 400px;
+      margin-left: 170px;
       .img__wrapper {
         .attachment-full {
           width: 100%;
           object-fit: none;
         }
       }
-      @media screen and(max-width:600px) {
-        display: none;
+      .slide__loop {
+        @media screen and(max-width:600px) {
+          display: flex;
+        }
+        .contents_item {
+          width: 350px;
+
+          .wp-post-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-top: -15px;
+          }
+        }
+        @media screen and(max-width:600px) {
+          display: none;
+        }
       }
     }
-    .shopInner__right {
-      position: fixed;
-      top: 80px;
-      right: 32px;
+
+    .shopDetail__right {
       width: 30px;
+      position: fixed;
+      top: 96px;
+      right: 32px;
       .company__text {
         transform: rotate(90deg);
       }
     }
   }
+  //fancyboxのCSS
+  .fancybox-image {
+    width: 500px;
+    height: 500px;
+  }
+}
+.fancybox-image {
+  height: 500px !important;
+}
+.fancybox-slide {
+  background-color: #fff;
+}
+
+.fancybox-toolbar {
+  display: none;
+}
+
+.fancybox-container {
+  background-color: #fff;
 }

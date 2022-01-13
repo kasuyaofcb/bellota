@@ -1,15 +1,21 @@
 
 @use "reset";
 @use "common";
+@use "fancybox";
 @use "front-pageTemplates/css/firstView";
 @use "galleryTemplates/css/galleryTop";
 @use "galleryTemplates/css/galleryContents";
+
+@use "page-rotiTemplates/css/details";
+/*# sourceMappingURL=style.css.map */ext-size-adjust: 100%;
+
 
 /*# sourceMappingURL=style.css.map */ers */
 html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
+
   /* 2 */
   -webkit-tap-highlight-color: transparent;
   /* 3*/
@@ -607,46 +613,57 @@ body {
   font-size: 1.2rem;
 }
 
-.shop .shopInner {
-  max-width: 1280px;
+.shopDetail .shopDetailInner {
   display: flex;
   overflow-y: hidden;
   justify-content: center;
   margin: 0 auto;
 }
 @media screen and (max-width: 600px) {
-  .shop .shopInner {
+  .shopDetail .shopDetailInner {
     flex-direction: column;
   }
 }
-.shop .shopInner .shopInner__left {
+.shopDetail .shopDetailInner .shopDetail__left {
   position: fixed;
-  top: 96px;
+  top: 80px;
   left: 32px;
 }
-.shop .shopInner .shopInner__left .shop__text .h1Text {
+.shopDetail .shopDetailInner .shopDetail__left .shopDetail__text .h1Text {
+  color: #000;
+  font-size: 2.4rem;
+}
+.shopDetail .shopDetailInner .shopDetail__left .shopDetail__text .h2Text {
   color: #000;
 }
-.shop .shopInner .shopInner__left .shop__text .h2Text {
-  color: #000;
-}
-.shop .shopInner .shopInner__left .shop__nav {
+.shopDetail .shopDetailInner .shopDetail__left .shopDetail__nav {
   margin-top: 176px;
   font-size: 1.6rem;
   line-height: 40px;
 }
 @media screen and (max-width: 600px) {
-  .shop .shopInner .shopInner__left .shop__nav {
+  .shopDetail .shopDetailInner .shopDetail__left .shopDetail__nav {
     display: none;
   }
 }
+
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav {
+
 .shop .shopInner .shopInner__left .ham__nav {
+
 
   display: none;
   /* ハンバーガーボタン */
   /* このクラスを、jQueryで付与・削除する */
 }
 @media screen and (max-width: 600px) {
+
+  .shopDetail .shopDetailInner .shopDetail__left .ham__nav {
+    display: block;
+  }
+}
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target {
+
 
   .galleryTop .galleryTopInner .headerWrapper .ham__nav {
     display: block;
@@ -660,6 +677,7 @@ body {
 }
 .shop .shopInner .shopInner__left .ham__nav .ham__target {
 
+
   display: block;
   position: fixed;
   z-index: 3;
@@ -672,9 +690,13 @@ body {
   /* ナビ開いてる時のボタン */
 }
 
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line {
+
+
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .ham__target .target__line {
 
 .shop .shopInner .shopInner__left .ham__nav .ham__target .target__line {
+
   display: block;
   position: absolute;
   width: 30px;
@@ -710,28 +732,32 @@ body {
   background: #000;
   transition: 0.3s ease-in-out;
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .target__line:nth-child(1) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line:nth-child(1) {
   top: 10px;
   width: 50px;
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .target__line:nth-child(2) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line:nth-child(2) {
   top: 25px;
   width: 40px;
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .target__line:nth-child(3) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line:nth-child(3) {
   top: 40px;
   width: 30px;
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .active:nth-child(1) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(1) {
   transform: translateY(6px);
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .active:nth-child(2) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(2) {
   transform: translateY(-4px);
 }
-.shop .shopInner .shopInner__left .ham__nav .ham__target .active:nth-child(3) {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(3) {
   transform: translateY(-14px);
 }
+
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp {
+
 .shop .shopInner .shopInner__left .ham__nav .globalMenuSp {
+
 
   position: fixed;
   z-index: 2;
@@ -746,9 +772,13 @@ body {
   width: 100%;
 }
 
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper {
+
+
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper {
 
 .shop .shopInner .shopInner__left .ham__nav .globalMenuSp .globalMenuSp__wrapper {
+
 
   background: #ccc;
   margin: 0 auto;
@@ -757,9 +787,13 @@ body {
   height: 100%;
 }
 
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item {
+
+
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item {
 
 .shop .shopInner .shopInner__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item {
+
 
   list-style-type: none;
   font-size: 1.6rem;
@@ -768,6 +802,9 @@ body {
   width: 100%;
   border-bottom: 1px solid #fff;
 }
+
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:last-child {
+
 
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:last-child {
   padding-bottom: 0;
@@ -779,19 +816,27 @@ body {
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .item__link {
 
 .shop .shopInner .shopInner__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:last-child {
+
   padding-bottom: 0;
   border-bottom: none;
 }
-.shop .shopInner .shopInner__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover {
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover {
   background: #ddd;
 }
+
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .item__link {
+
 .shop .shopInner .shopInner__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .item__link {
+
 
   display: block;
   color: #000;
   padding: 1em 0;
   text-decoration: none;
 }
+
+.shopDetail .shopDetailInner .shopDetail__left .ham__nav .active {
+
 
 .galleryTop .galleryTopInner .headerWrapper .ham__nav .active {
   transform: translateX(0%);
@@ -1344,30 +1389,69 @@ body {
 }
 
 .shop .shopInner .shopInner__left .ham__nav .active {
+
   transform: translateX(0%);
 }
-.shop .shopInner .shopInner__center {
-  max-width: 350px;
+.shopDetail .shopDetailInner .shopDetail__center {
+  max-width: 400px;
+  margin-left: 170px;
 }
-.shop .shopInner .shopInner__center .img__wrapper .attachment-full {
+.shopDetail .shopDetailInner .shopDetail__center .img__wrapper .attachment-full {
   width: 100%;
   -o-object-fit: none;
      object-fit: none;
 }
 @media screen and (max-width: 600px) {
-  .shop .shopInner .shopInner__center {
+  .shopDetail .shopDetailInner .shopDetail__center .slide__loop {
+    display: flex;
+  }
+}
+.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item {
+  width: 350px;
+}
+.shopDetail .shopDetailInner .shopDetail__center .slide__loop .contents_item .wp-post-image {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -15px;
+}
+@media screen and (max-width: 600px) {
+  .shopDetail .shopDetailInner .shopDetail__center .slide__loop {
     display: none;
   }
 }
-.shop .shopInner .shopInner__right {
-  position: fixed;
-  top: 80px;
-  right: 32px;
+.shopDetail .shopDetailInner .shopDetail__right {
   width: 30px;
+  position: fixed;
+  top: 96px;
+  right: 32px;
 }
-.shop .shopInner .shopInner__right .company__text {
+.shopDetail .shopDetailInner .shopDetail__right .company__text {
   transform: rotate(90deg);
 }
+
+.shopDetail .fancybox-image {
+  width: 500px;
+  height: 500px;
+}
+
+.fancybox-image {
+  height: 500px !important;
+}
+
+.fancybox-slide {
+  background-color: #fff;
+}
+
+.fancybox-toolbar {
+  display: none;
+}
+
+.fancybox-container {
+  background-color: #fff;
+}
+
 
 .profile {
   text-align: center;
@@ -1435,6 +1519,7 @@ body {
     display: none;
   }
 }
+
 
 
 /*# sourceMappingURL=style.css.map */

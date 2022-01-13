@@ -1,5 +1,5 @@
 // JavaScript Document
-jQuery.fn.preloader = function(options){
+$.fn.preloader = function(options){
 	
 	var defaults = {
 		             delay:100,
@@ -11,8 +11,8 @@ jQuery.fn.preloader = function(options){
 					};
 	
 	// variables declaration and precaching images and parent container
-	 var options = jQuery.extend(defaults, options),
-	 root = jQuery(this) , images = root.find("img").css({"visibility":"hidden",opacity:0}) ,  timer ,  counter = 0, i=0 , checkFlag = [] , delaySum = options.delay ,
+	 var options = $.extend(defaults, options),
+	 root = $(this) , images = root.find("img").css({"visibility":"hidden",opacity:0}) ,  timer ,  counter = 0, i=0 , checkFlag = [] , delaySum = options.delay ,
 	 
 	 init = function(){
 		
@@ -38,8 +38,8 @@ jQuery.fn.preloader = function(options){
 						delaySum = delaySum + options.delay;
 					}
 					
-					jQuery(images[i]).css("visibility","visible").delay(delaySum).animate({opacity:1},options.fadein,
-					function(){ jQuery(this).parent().removeClass("preloader");   });
+					$(images[i]).css("visibility","visible").delay(delaySum).animate({opacity:1},options.fadein,
+					function(){ $(this).parent().removeClass("preloader");   });
 					
 					
 					
@@ -54,16 +54,16 @@ jQuery.fn.preloader = function(options){
 	
 	images.each(function(){
 		
-		if(jQuery(this).parent(options.preload_parent).length==0)
-		jQuery(this).wrap("<a class='preloader' />");
+		if($(this).parent(options.preload_parent).length==0)
+		$(this).wrap("<a class='preloader' />");
 		else
-		jQuery(this).parent().addClass("preloader");
+		$(this).parent().addClass("preloader");
 		
 		checkFlag[i++] = false;
 		
 		
 		}); 
-	images = jQuery.makeArray(images); 
+	images = $.makeArray(images); 
 	
 	
 	var icon = jQuery("<img />",{

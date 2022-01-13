@@ -10,6 +10,9 @@
 //全体用CSS
 @use "common"; // ここで全体のCSS(SCSS)を呼び出す。
 
+//fancybox用CSS
+@use "fancybox"; // ここでfancyboxのCSS(SCSS)を呼び出す。
+
 //front-page.php用CSS
 
 @use "front-pageTemplates/css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。
