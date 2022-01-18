@@ -4,37 +4,72 @@
   background-color: #000;
   width: 100vw;
   height: 100vh;
-  .firstViewInner {
+  .firstView__inner {
     width: 100%;
     height: 100%;
     position: relative;
-
-    .firstView__slideWrapper {
+    .swiper {
+      // overflow: hidden;
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 53%; //真ん中よせ微調整
       transform: translate(-50%, -50%);
       width: 400px;
       height: 400px;
-      .slide__item {
-        width: 100%;
+      @media screen and(max-width:600px) {
+        width: 250px;
+        height: 250px;
       }
-      .item--pink {
-        background-color: pink;
-      }
-      .item--green {
-        background-color: green;
-      }
-      .item--blue {
-        background-color: blue;
+      .swiper-wrapper {
+        // height: 100%;
+        text-align: center;
+        // line-height: 300px;
+        .wp-post-image {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
     .firstView__logo {
       position: absolute;
-      bottom: 75px;
+      bottom: 80px;
       right: 46px;
       transform: rotate(90deg);
       color: #fff;
     }
   }
 }
+
+//画面遷移アニメーション
+body {
+  transition: all 1s;
+}
+
+.bodyfadeout {
+  opacity: 0;
+}
+
+.cover {
+  width: 0;
+  height: 100vh;
+  background-color: #fffffb;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.anime5 {
+  animation: animemove5 0.8s linear forwards;
+}
+
+@keyframes animemove5 {
+  0% {
+  }
+  100% {
+    width: 100vw;
+  }
+}
+//画面遷移アニメーション 終了

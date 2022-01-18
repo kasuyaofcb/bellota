@@ -4,36 +4,101 @@
   background-color: #000;
   padding: 42px 36px 0 36px;
   @media screen and(max-width:600px) {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding: 30px 16px 0 16px;
   }
-  .galleryTopInner {
+  .galleryTop__inner {
     max-width: 1280px;
     margin: 0 auto;
     font-weight: lighter;
     color: #fff;
-    .headerWrapper {
+    .header__wrapper {
       max-width: 1280px;
       display: flex;
-      align-items: flex-end;
       justify-content: space-between;
-      .header__text {
+
+      .text__title {
+        font-size: 2.4rem;
+        word-break: break-all;
         @media screen and(max-width:600px) {
-          max-width: 350px;
+          font-size: 1.6rem;
         }
       }
+      .text__subtitle {
+        font-size: 2rem;
+        @media screen and(max-width:600px) {
+          font-size: 1.4rem;
+        }
+      }
+      .header__layoutBox {
+        width: 300px;
+        height: 150px;
+      }
       .header__nav {
+        position: fixed;
+        top: 63px;
+        right: 48px;
+        z-index: 10;
+        text-align: right;
         @media screen and(max-width:600px) {
           display: none;
         }
         font-size: 1.6rem;
-        .navInner {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          .nav__item {
-            margin-left: 36px;
-            line-height: 32px;
+        .nav__inner {
+          line-height: 40px;
+          text-align: right;
+        }
+        .nav__item {
+          cursor: pointer;
+          &:hover > .sub__wrapper {
+            display: block;
+            transition: 0.3s ease-in-out;
+          }
+          .main__box {
+            display: inline;
+            padding-left: 16px;
+            padding-left: 16px;
+            position: relative;
+            &:hover {
+              opacity: 0.8;
+            }
+            &:hover::before {
+              opacity: 1;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 47%;
+              left: 0;
+              transform: translateY(-50%);
+              border: 5px solid transparent;
+              border-left: 8px solid #fff; /* 好みで色を変えてください */
+              opacity: 0;
+            }
+          }
+        }
+        .sub__wrapper {
+          display: none;
+          margin-left: 24px;
+          line-height: 16px;
+          transition: 0.5s;
+          animation: fadeslidein 0.5s;
+          opacity: 1;
+          background-color: rgba($color: #000, $alpha: 0.7);
+          padding: 16px 0 16px 16px;
+          @keyframes fadeslidein {
+            0% {
+              opacity: 0;
+              transform: translateY(0.5rem);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .sub__item {
+            line-height: 16px;
+            display: block;
+            margin-top: 16px;
           }
         }
       }
@@ -64,19 +129,41 @@
             -webkit-transition: 0.3s ease-in-out;
             -moz-transition: 0.3s ease-in-out;
             transition: 0.3s ease-in-out;
+          }
+          .target__line1 {
+            top: 10px;
+            width: 50px;
+            transition: 0.3s ease-in-out;
+          }
+          .target__line2 {
+            top: 25px;
+            width: 40px;
+          }
+          .target__line3 {
+            top: 40px;
+            width: 30px;
+            transition: 0.3s ease-in-out;
+          }
 
-            &:nth-child(1) {
-              top: 10px;
-              width: 50px;
-            }
-            &:nth-child(2) {
-              top: 25px;
-              width: 40px;
-            }
-            &:nth-child(3) {
-              top: 40px;
-              width: 30px;
-            }
+          .target__line--active {
+            background-color: #fff;
+            transition: 0.3s ease-in-out;
+          }
+          .target__line1--active {
+            top: 25px;
+            width: 40px;
+            left: 10px;
+            transition: 0.3s ease-in-out;
+          }
+          .target__line2--active {
+            left: 10px;
+            transition: 0.3s ease-in-out;
+          }
+          .target__line3--active {
+            top: 25px;
+            width: 40px;
+            left: 10px;
+            transition: 0.3s ease-in-out;
           }
 
           /* ナビ開いてる時のボタン */
@@ -113,6 +200,7 @@
           width: 100%;
 
           .globalMenuSp__wrapper {
+            position: relative;
             background: #ccc;
             margin: 0 auto;
             padding: 80px 0 0;
@@ -126,6 +214,7 @@
               padding: 0;
               width: 100%;
               border-bottom: 1px solid #fff;
+              position: relative;
 
               &:last-child {
                 padding-bottom: 0;
@@ -133,6 +222,9 @@
               }
               &:hover {
                 background: #ddd;
+                &:last-child {
+                  background: none;
+                }
               }
 
               .item__link {
@@ -141,12 +233,145 @@
                 padding: 1em 0;
                 text-decoration: none;
               }
+              .main__box {
+                overflow: hidden;
+                display: block;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                line-height: 72px;
+
+                .accordion__button {
+                  position: absolute;
+                  top: 16px;
+                  right: 32px;
+                  border: none;
+                  outline: none;
+                  margin: 0;
+                  padding: 0;
+                  pointer-events: none;
+                  background: 0 0;
+                  display: inline-block;
+                  animation: slidein 1s cubic-bezier(0.19, 1, both 0.3s);
+                  .button__in {
+                    width: 40px;
+                    height: 40px;
+                    position: relative;
+                    transition: 0.5s cubic-bezier(0.19, 1);
+
+                    .button__circle {
+                      width: 40px;
+                      height: 40px;
+                      top: 0;
+                      right: 0;
+                      overflow: hidden;
+                      position: absolute;
+                      z-index: 0;
+                      border-radius: 50%;
+                      &::before {
+                        background: #acacac;
+                        border: #acacac solid 0.1rem;
+                        transition: transform 0.5s
+                          cubic-bezier(0.19, 1, 0.22, 1);
+                        transform: scale(0.75);
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        border-radius: 50%;
+                      }
+                    }
+                    .line1 {
+                      background-color: #fff;
+                      width: 10px;
+                      top: 20px;
+                      right: 15px;
+                      display: block;
+                      content: "";
+                      position: absolute;
+                      margin: auto;
+                      height: 1px;
+                      transition: 0.2s cubic-bezier(0.19, 1);
+                      z-index: 1;
+                    }
+                    .line2 {
+                      background-color: #fff;
+                      width: 1px;
+                      top: 15px;
+                      right: 20px;
+                      display: block;
+                      content: "";
+                      position: absolute;
+                      margin: auto;
+                      height: 10px;
+                      transition: 0.3s cubic-bezier(0.19, 1);
+                      z-index: 1;
+                      transition: 0.2s;
+                    }
+                    .line2--active {
+                      transform: rotate(90deg);
+                      transition: 0.2s;
+                    }
+                  }
+                }
+              }
+              .sub__box {
+                display: none;
+                transition: 0.5s;
+                animation: fadeslidein 0.5s;
+                opacity: 1;
+                @keyframes fadeslidein {
+                  0% {
+                    opacity: 0;
+                    transform: translateY(0.5rem);
+                  }
+                  100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                .sub__wrapper {
+                  .sub__item {
+                    overflow: hidden;
+                    display: block;
+                    margin: 0 0 5px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    &:hover {
+                      background: #ddd;
+                    }
+                  }
+                }
+              }
+              .accordion--open {
+                display: block;
+              }
             }
           }
         }
         /* このクラスを、jQueryで付与・削除する */
         .active {
           transform: translateX(0%);
+        }
+        .accordion__target {
+          position: fixed;
+          top: 226px;
+          left: 0;
+          z-index: 10;
+          height: 72px;
+          width: 100%;
+          opacity: 0.3;
+          display: none;
+          cursor: pointer;
+          &:hover {
+            background: #fff;
+          }
+        }
+        .accordion__target--active {
+          display: block;
         }
       }
     }

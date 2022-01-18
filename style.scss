@@ -2,16 +2,14 @@
 
 @charset "utf-8";
 
-
 //リセット用CSS
-@use "reset"; // ここでリセットのCSS(SCSS)を呼び出す。
-
+@use "css/reset"; // ここでリセットのCSS(SCSS)を呼び出す。
 
 //全体用CSS
-@use "common"; // ここで全体のCSS(SCSS)を呼び出す。
+@use "css/common"; // ここで全体のCSS(SCSS)を呼び出す。
 
 //fancybox用CSS
-@use "fancybox"; // ここでfancyboxのCSS(SCSS)を呼び出す。
+@use "fancybox/css/fancybox"; // ここでfancyboxのCSS(SCSS)を呼び出す。
 
 //front-page.php用CSS
 
@@ -21,12 +19,9 @@
 @use "galleryTemplates/css/galleryTop"; // ここでギャラリートップのCSS(SCSS)を呼び出す。
 @use "galleryTemplates/css/galleryContents"; // ここでギャラリーコンテンツのCSS(SCSS)を呼び出す。
 
-//page-detail***.php用CSS
-@use "page-rotiTemplates/css/details"; // ここでrotiのCSS(SCSS)を呼び出す。
+//page-detailphp用CSS
+@use "page-detailsTemplates/css/details"; // ここで詳細ページのCSS(SCSS)を呼び出す。
 
 //page-profile.php用CSS
 @use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
-
-
-
-
+@use "page-profileTemplates/css/profileContents"; // ここでプロフィールページのCSS(SCSS)を呼び出す。

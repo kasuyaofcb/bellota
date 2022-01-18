@@ -1,0 +1,98 @@
+//common.scss
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+
+  font-weight: 100;
+  letter-spacing: 0.5em;
+}
+
+h1 {
+  color: #fff;
+  font-weight: lighter;
+  line-height: 32px;
+  font-size: 2.4rem;
+}
+
+h2 {
+  color: #fff;
+  font-weight: lighter;
+  line-height: 1.5;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  color: #fff;
+}
+
+.text--white {
+  color: #fff;
+}
+
+.text--black {
+  color: #000;
+}
+
+.arrow--active {
+  &:hover {
+    opacity: 0.8;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  position: relative;
+  padding: 0 0 0 16px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 47%; /* 縦軸をセンタリングする */
+    left: 0;
+    transform: translateY(-50%); /* 縦軸をセンタリングする */
+    border: 5px solid transparent;
+    border-left: 8px solid #000; /* 好みで色を変えてください */
+    opacity: 0;
+  }
+}
+.arrow--white::before {
+  border-left: 8px solid #fff;
+}
+
+//ページ遷移時のフェードイン
+body {
+  -webkit-animation: fadeIn 1.5s ease 0s 1 normal;
+  animation: fadeIn 1.5s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// /*body要素に.fadeoutセレクタがある場合には、レイヤーが表示されるようにopacityを１に設定します。*/
+
+// .fadein::after {
+//   opacity: 1;
+// }

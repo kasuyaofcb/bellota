@@ -1,37 +1,58 @@
-.profileTop {
-  text-align: center;
-  padding: 36px 32px 36px 32px;
+.shopDetail {
+  border: 1px solid #ccc;
   @media screen and(max-width:600px) {
-    padding-right: 16px;
-    padding-left: 16px;
+    height: 100vh;
+    padding: 32px 0;
   }
-  .profileTop__inner {
-    max-width: 1280px;
+  .mask {
+    display: none;
+  }
+  .mask--active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+  }
+  .shopDetailInner {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
+    @media screen and(max-width:600px) {
+      flex-direction: column;
+    }
 
-    .header__wrapper {
-      max-width: 1280px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      .header__text {
-        position: absolute;
-        @media screen and(max-width:600px) {
-          max-width: 350px;
+    .shopDetail__left {
+      position: fixed;
+      top: 64px;
+      left: 32px;
+      z-index: 5;
+
+      @media screen and(max-width:600px) {
+        position: static;
+        padding: 0 20px 0 20px;
+        margin-right: 100px;
+        max-width: none;
+      }
+      .left__text {
+        .left__title {
+          color: #000;
+          font-size: 2.4rem;
+        }
+        .left__subtitle {
+          color: #000;
+          font-size: 2rem;
+          margin-top: 16px;
         }
       }
-      .header__nav {
-        position: fixed;
-        top: 63px;
-        left: 32px;
-        z-index: 10;
+      .left__nav {
+        margin-top: 40px;
+        font-size: 1.6rem;
+        line-height: 40px;
+        position: relative;
         @media screen and(max-width:600px) {
           display: none;
-        }
-        font-size: 1.6rem;
-        .nav__inner {
-          line-height: 40px;
-          text-align: left;
         }
         .nav__item {
           cursor: pointer;
@@ -39,26 +60,25 @@
             display: block;
             transition: 0.3s ease-in-out;
           }
-          .main__box {
-            padding-left: 16px;
-            padding-left: 16px;
-            &:hover {
-              opacity: 0.8;
-            }
-            &:hover::before {
-              opacity: 1;
-            }
-            position: relative;
-            &::before {
-              content: "";
-              position: absolute;
-              top: 47%;
-              left: 0;
-              transform: translateY(-50%);
-              border: 5px solid transparent;
-              border-left: 8px solid #000; /* 好みで色を変えてください */
-              opacity: 0;
-            }
+        }
+        .main__box {
+          padding-left: 16px;
+          &:hover {
+            opacity: 0.8;
+          }
+          &:hover::before {
+            opacity: 1;
+          }
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 48%;
+            left: 0;
+            transform: translateY(-55%);
+            border: 5px solid transparent;
+            border-left: 8px solid #000; /* 好みで色を変えてください */
+            opacity: 0;
           }
         }
         .sub__wrapper {
@@ -81,9 +101,14 @@
             }
           }
           .sub__item {
-            line-height: 16px;
+            line-height: 24px;
             display: block;
             margin-top: 16px;
+          }
+          .arrow--active {
+            &::before {
+              top: 48%;
+            }
           }
         }
       }
@@ -325,7 +350,6 @@
                     margin: 0 0 5px;
                     padding-left: 16px;
                     padding-right: 16px;
-
                     &:hover {
                       background: #ddd;
                     }
@@ -360,20 +384,112 @@
           display: block;
         }
       }
-      .profile__title {
-        position: fixed;
-        top: 120px;
-        right: 32px;
+    }
+
+    .shopDetail__center {
+      margin-left: 170px;
+      @media screen and(max-width:600px) {
+        margin-left: 0;
+      }
+      .scroll__box {
+        width: 350px;
+        @media screen and(max-width:850px) {
+          width: 300px;
+        }
+
+        @media screen and(max-width:600px) {
+          display: none;
+        }
+
+        .scroll__wrapper {
+          .img__linkBox {
+            width: 350px;
+          }
+          .wp-post-image {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .scroll-boxSp {
+        display: none;
+        height: 300px;
+        margin-top: 150px;
+        @media screen and(max-width:600px) {
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+        }
+        .scroll__wrapperSp {
+          display: flex;
+          // overflow-x: scroll;
+
+          .contents__item {
+            .img__link {
+              width: 300px;
+              height: 300px;
+              .wp-post-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+        .scroll__wrapperSp--stop {
+          animation: loop-slide 40s infinite linear 1s both;
+          @keyframes loop-slide {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-100%);
+            }
+          }
+        }
+      }
+    }
+
+    .shopDetail__right {
+      width: 30px;
+      position: fixed;
+      top: 64px;
+      right: 32px;
+      z-index: 2;
+      @media screen and(max-width:600px) {
+        position: static;
+        margin-top: 32px;
+        padding: 0 20px 0 20px;
+        text-align: right;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .company__text {
         transform: rotate(90deg);
-        font-size: 1.6rem;
-        z-index: 1;
         @media screen and(max-width:600px) {
           transform: rotate(0);
-          top: 47px;
-          left: 32px;
-          text-align: left;
         }
       }
     }
   }
+  //fancyboxのCSS
+  .fancybox-image {
+    width: 500px;
+    height: 500px;
+  }
+}
+.fancybox-image {
+  height: 500px !important;
+}
+.fancybox-slide {
+  background-color: #fff;
+}
+
+.fancybox-toolbar {
+  display: none;
+}
+
+.fancybox-container {
+  background-color: #fff;
 }

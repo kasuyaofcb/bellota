@@ -1,0 +1,56 @@
+.profileContents {
+  text-align: center;
+  padding: 32px 32px 36px 32px;
+  @media screen and(max-width:600px) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .profileContents__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .address {
+      margin-top: 160px;
+      @media screen and(max-width:600px) {
+        margin-top: 32px;
+      }
+      .address__wrapper {
+        .address__item {
+          margin-top: 64px;
+          &:first-child {
+            margin-top: 0;
+          }
+          .h1Text {
+            color: #000;
+            font-size: 2.4rem;
+          }
+          .item__tel {
+            margin-top: 16px;
+          }
+          .item__add {
+            margin-top: 16px;
+          }
+          .map__layout {
+            max-width: 600px;
+            margin: 0 auto;
+            .item__map {
+              position: relative;
+              max-width: 600px;
+              width: 100%;
+              height: 0;
+              padding-top: 75%; /* 比率を4:3に固定 */
+              margin: 16px auto 0;
+              .map {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

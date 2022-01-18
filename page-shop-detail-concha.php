@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<body>
+<body class="fadein">
 
     <!-- // ここでconchaトップのPHPを呼び出す。 -->
-    <?php get_template_part('page-conchaTemplates/conchaTop'); ?>
+    <?php get_template_part('page-detailsTemplates/concha'); ?>
 
 
 

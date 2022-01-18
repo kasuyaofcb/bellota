@@ -1,11 +1,12 @@
 'use strict'
+
+
+
 {
 
   
-    const mySwiper = new Swiper(".swiper-container", {
+     const swiper = new Swiper(".swiper", {
         direction: 'vertical',
-        allowSlidePrev: true,
-        reverseDirection: true,
         effect: 'fade',
         slidesPerView: 1,
         inverse: false,
@@ -14,8 +15,13 @@
             delay: 3000,
         },
         speed: 2000,
+        centeredSlides: true,
+        initialSlide:2,
+        calculateHeight:true,
+     
 
     });
 
-
+    
+    
 }

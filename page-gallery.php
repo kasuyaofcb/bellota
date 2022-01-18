@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<body>
+<body class="fadein">
 
     <!-- // ここでギャラリートップのPHPを呼び出す。 -->
     <?php get_template_part('galleryTemplates/galleryTop'); ?>

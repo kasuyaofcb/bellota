@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<body>
+<body class="fadein">
 
     <!-- // ここでrotiトップのPHPを呼び出す。 -->
-    <?php get_template_part('page-rotiTemplates/rotiTop'); ?>
+    <?php get_template_part('page-detailsTemplates/roti'); ?>
 
 
 
