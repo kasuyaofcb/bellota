@@ -4,10 +4,10 @@
 @use "front-pageTemplates/css/firstView";
 @use "galleryTemplates/css/galleryTop";
 @use "galleryTemplates/css/galleryContents";
-@use "page-detailsTemplates/css/details";
+@use "page-shop-detailsTemplates/css/details";
 @use "page-profileTemplates/css/profileTop";
 @use "page-profileTemplates/css/profileContents";
-/*# sourceMappingURL=style.css.map */================================= */
+/*# sourceMappingURL=style.css.map */============================ */
   /**
            * 1. Correct the line height in all browsers.
            * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -1481,7 +1481,7 @@ body {
 .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp {
   display: none;
   height: 300px;
-  margin-top: 150px;
+  margin-top: 64px;
 }
 @media screen and (max-width: 600px) {
   .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp {
@@ -1492,10 +1492,13 @@ body {
 }
 .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp {
   display: flex;
+  height: 300px;
+}
+.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item {
+  width: 300px;
 }
 .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item .img__link {
   width: 300px;
-  height: 300px;
 }
 .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item .img__link .wp-post-image {
   width: 100%;

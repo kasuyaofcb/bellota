@@ -20,7 +20,7 @@
 @use "galleryTemplates/css/galleryContents"; // ここでギャラリーコンテンツのCSS(SCSS)を呼び出す。
 
 //page-detailphp用CSS
-@use "page-detailsTemplates/css/details"; // ここで詳細ページのCSS(SCSS)を呼び出す。
+@use "page-shop-detailsTemplates/css/details"; // ここで詳細ページのCSS(SCSS)を呼び出す。
 
 //page-profile.php用CSS
 @use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
