@@ -19,11 +19,13 @@
                                                                     echo get_page_link(5);
                                                                     ?>">GALLERY</a>
                     </li>
+                    <!-- <li class="nav__item"> -->
                     <li class="nav__item">
                         <a class="arrow--active arrow--white" href="<?php
                                                                     echo get_page_link(68);
                                                                     ?>">PROFILE</a>
                     </li>
+                    <!-- <li class="nav__item"> -->
                     <li class="nav__item nav__3rd">
                         <div class="main__box">
                             SHOP
@@ -31,24 +33,28 @@
                         <ul class="sub__wrapper">
                             <li class="sub__item">
                                 <a class="arrow--active arrow--white" href="<?php
-                                                                            echo get_page_link(53);
+                                                                            echo get_page_link(179);
                                                                             ?>" class="itemSub__link">BELLOTA MUCHO</a>
                             </li>
+                            <!-- <li class="sub__item"> -->
                             <li class="sub__item">
                                 <a class="arrow--active arrow--white" href="<?php
-                                                                            echo get_page_link(56);
+                                                                            echo get_page_link(182);
                                                                             ?>" class="itemSub__link">BELLOTA CONCHA</a>
                             </li>
+                            <!-- <li class="sub__item"> -->
                             <li class="sub__item">
                                 <a class="arrow--active arrow--white" href="<?php
-                                                                            echo get_page_link(60);
+                                                                            echo get_page_link(184);
                                                                             ?>" class="itemSub__link">BELLOTA MUAMUA</a>
                             </li>
+                            <!-- <li class="sub__item"> -->
                             <li class="sub__item">
                                 <a class="arrow--active arrow--white" href="<?php
-                                                                            echo get_page_link(63);
+                                                                            echo get_page_link(186);
                                                                             ?>" class="itemSub__link">ROTI CHICKEN & JACKIE TACOS</a>
                             </li>
+                            <!-- <li class="sub__item"> -->
                         </ul>
                         <!-- <ul class="sub__wrapper"> -->
                     </li>
@@ -71,11 +77,13 @@
                                         echo get_page_link(5);
                                         ?>" class="item__link">GALLERY</a>
                         </li>
+                        <!-- <li class="nav__item"> -->
                         <li class="nav__item">
                             <a href="<?php
                                         echo get_page_link(68);
                                         ?>" class="item__link">PROFILE</a>
                         </li>
+                        <!-- <li class="nav__item"> -->
                         <li class="nav__item nav__3rd">
                             <div class="main__box">
                                 <div class="shop__text">
@@ -88,32 +96,47 @@
                                         <div class="line1"></div>
                                         <div class="line2"></div>
                                     </div>
+                                    <!-- <div class="button__in"> -->
                                 </button>
+                                <!-- <button class="accordion__button"> -->
                             </div>
                             <!-- <div class="main__box"> -->
                             <div class="sub__box">
                                 <ul class="sub__wrapper">
-                                    <a href="<?php
-                                                echo get_page_link(53);
-                                                ?>" class="itemSub__link">
-                                        <li class="sub__item">BELLOTA MUCHO</li>
-                                    </a>
-                                    <a href="<?php
-                                                echo get_page_link(56);
-                                                ?>" class="itemSub__link">
-                                        <li class="sub__item">BELLOTA CONCHA</li>
-                                    </a>
-                                    <a href="<?php
-                                                echo get_page_link(60);
-                                                ?>" class="itemSub__link">
-                                        <li class="sub__item">BELLOTA MUAMUA</li>
-                                    </a>
-                                    <a href="<?php
-                                                echo get_page_link(63);
-                                                ?>" class="itemSub__link">
-                                        <li class="sub__item">ROTI CHICKEN & JACKIE TACOS</li>
-                                    </a>
+                                    <li class="sub__item">
+                                        <a href="<?php
+                                                    echo get_page_link(179);
+                                                    ?>" class="itemSub__link">
+                                            BELLOTA MUCHO
+                                        </a>
+                                    </li>
+                                    <!-- <li class="sub__item"> -->
+                                    <li class="sub__item">
+                                        <a href="<?php
+                                                    echo get_page_link(182);
+                                                    ?>" class="itemSub__link">
+                                            BELLOTA CONCHA
+                                        </a>
+                                    </li>
+                                    <!-- <li class="sub__item"> -->
+                                    <li class="sub__item">
+                                        <a href="<?php
+                                                    echo get_page_link(184);
+                                                    ?>" class="itemSub__link">
+                                            BELLOTA MUAMUA
+                                        </a>
+                                    </li>
+                                    <!-- <li class="sub__item"> -->
+                                    <li class="sub__item">
+                                        <a href="<?php
+                                                    echo get_page_link(186);
+                                                    ?>" class="itemSub__link">
+                                            ROTI CHICKEN & JACKIE TACOS
+                                        </a>
+                                    </li>
+                                    <!-- <li class="sub__item"> -->
                                 </ul>
+                                <!-- <ul class="sub__wrapper"> -->
                             </div>
                             <!-- <div class="sub__box"> -->
                         </li>

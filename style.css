@@ -1,13 +1,16 @@
-@use "css/reset";
-@use "css/common";
-@use "fancybox/css/fancybox";
-@use "front-pageTemplates/css/firstView";
-@use "galleryTemplates/css/galleryTop";
-@use "galleryTemplates/css/galleryContents";
-@use "page-shop-detailsTemplates/css/details";
-@use "page-profileTemplates/css/profileTop";
-@use "page-profileTemplates/css/profileContents";
-/*# sourceMappingURL=style.css.map */============================ */
+@charset "UTF-8";
+/* ==========ここからリセットCSS============= */
+/*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/* Reset box-model and set borders */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-tap-highlight-color: transparent;
+  /* 3*/
+  /* Document */
+  /* ============================================ */
   /**
            * 1. Correct the line height in all browsers.
            * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -507,6 +510,7 @@ body {
   background-color: #000;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 .firstView .firstView__inner {
   width: 100%;
@@ -516,32 +520,50 @@ body {
 .firstView .firstView__inner .swiper {
   position: absolute;
   top: 50%;
-  left: 53%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
   height: 400px;
 }
 @media screen and (max-width: 600px) {
   .firstView .firstView__inner .swiper {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .firstView .firstView__inner .swiper {
     width: 250px;
     height: 250px;
+    left: 0;
+    transform: translate(0, -50%);
   }
 }
 .firstView .firstView__inner .swiper .swiper-wrapper {
   text-align: center;
 }
-.firstView .firstView__inner .swiper .swiper-wrapper .wp-post-image {
-  height: 100%;
+.firstView .firstView__inner .swiper .swiper-wrapper .swiper-slide {
+  cursor: pointer;
+}
+.firstView .firstView__inner .swiper .swiper-wrapper .swiper-slide .contents_item__img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .firstView .firstView__inner .firstView__logo {
-  position: absolute;
-  bottom: 80px;
-  right: 46px;
+  font-size: 1.6rem;
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
   transform: rotate(90deg);
   color: #fff;
+}
+@media screen and (max-width: 390px) {
+  .firstView .firstView__inner .firstView__logo {
+    bottom: 56%;
+    right: 0;
+  }
 }
 
 body {
@@ -602,18 +624,22 @@ body {
 .galleryTop .galleryTop__inner .header__wrapper .text__title {
   font-size: 2.4rem;
   word-break: break-all;
+  line-height: 40px;
 }
 @media screen and (max-width: 600px) {
   .galleryTop .galleryTop__inner .header__wrapper .text__title {
     font-size: 1.6rem;
+    line-height: 32px;
   }
 }
 .galleryTop .galleryTop__inner .header__wrapper .text__subtitle {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  line-height: 16px;
 }
 @media screen and (max-width: 600px) {
   .galleryTop .galleryTop__inner .header__wrapper .text__subtitle {
-    font-size: 1.4rem;
+    font-size: 1em;
+    line-height: 14px;
   }
 }
 .galleryTop .galleryTop__inner .header__wrapper .header__layoutBox {
@@ -622,7 +648,7 @@ body {
 }
 .galleryTop .galleryTop__inner .header__wrapper .header__nav {
   position: fixed;
-  top: 63px;
+  top: 64px;
   right: 48px;
   z-index: 10;
   text-align: right;
@@ -933,6 +959,10 @@ body {
 .galleryTop .galleryTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item:hover {
   background: #ddd;
 }
+.galleryTop .galleryTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item .itemSub__link {
+  display: block;
+  width: 100%;
+}
 .galleryTop .galleryTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .accordion--open {
   display: block;
 }
@@ -986,37 +1016,33 @@ body {
 .galleryContents .galleryContents__inner .contents__wrapper .contents_item {
   position: relative;
   text-align: center;
-  background-color: gray;
   max-height: 314px;
   max-width: 314px;
-  padding-top: 100%;
-}
-.galleryContents .galleryContents__inner .contents__wrapper .contents_item .attachment-large {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.galleryContents .galleryContents__inner .contents__wrapper .contents_item .wp-post-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .galleryContents .galleryContents__inner .contents__wrapper .img__item {
   position: relative;
+  width: 100%;
+  height: auto;
 }
-.galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 {
+.galleryContents .galleryContents__inner .contents__wrapper .img__item::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .contents_item__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1029,11 +1055,11 @@ body {
   opacity: 0;
   text-align: left;
 }
-.galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0:hover {
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0:hover {
   opacity: 10;
   background-color: rgba(3, 3, 3, 0.8);
 }
-.galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 {
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 {
   position: absolute;
   top: 50%;
   left: 8%;
@@ -1042,121 +1068,106 @@ body {
   word-break: break-all;
 }
 @media screen and (max-width: 600px) {
-  .galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 {
+  .galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 {
     line-height: 14px;
   }
 }
-.galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__title {
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__title {
   font-size: 1.6rem;
 }
 @media screen and (max-width: 600px) {
-  .galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__title {
+  .galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__title {
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 375px) {
-  .galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__title {
+@media screen and (max-width: 390px) {
+  .galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__title {
     font-size: 1rem;
   }
 }
-.galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
+.galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
   margin-top: 16px;
   font-size: 1.2rem;
 }
 @media screen and (max-width: 600px) {
-  .galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
+  .galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
     margin-top: 8px;
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 375px) {
-  .galleryContents .galleryContents__inner .contents__wrapper .img__item .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
+@media screen and (max-width: 390px) {
+  .galleryContents .galleryContents__inner .contents__wrapper .img__item .img__inner .row__filter--opacity0 .row__text--opacity0 .row__subtitle {
     font-size: 0.8rem;
   }
 }
 
-.shopDetail {
-  border: 1px solid #ccc;
-}
 @media screen and (max-width: 600px) {
   .shopDetail {
-    height: 100vh;
     padding: 32px 0;
   }
 }
-.shopDetail .mask {
-  display: none;
-}
-.shopDetail .mask--active {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: block;
-}
-.shopDetail .shopDetailInner {
+.shopDetail .shopDetail__inner {
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner {
+  .shopDetail .shopDetail__inner {
     flex-direction: column;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left {
+.shopDetail .shopDetail__inner .shopDetail__left {
   position: fixed;
   top: 64px;
   left: 32px;
   z-index: 5;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__left {
+  .shopDetail .shopDetail__inner .shopDetail__left {
     position: static;
     padding: 0 20px 0 20px;
     margin-right: 100px;
     max-width: none;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__text .left__title {
+.shopDetail .shopDetail__inner .shopDetail__left .left__text .left__title {
   color: #000;
   font-size: 2.4rem;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__text .left__subtitle {
+.shopDetail .shopDetail__inner .shopDetail__left .left__text .left__subtitle {
   color: #000;
   font-size: 2rem;
   margin-top: 16px;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav {
   margin-top: 40px;
   font-size: 1.6rem;
   line-height: 40px;
   position: relative;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__left .left__nav {
+  .shopDetail .shopDetail__inner .shopDetail__left .left__nav {
     display: none;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .nav__item {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .nav__item {
   cursor: pointer;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .nav__item:hover > .sub__wrapper {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .nav__item:hover > .sub__wrapper {
   display: block;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .main__box {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .main__box {
   padding-left: 16px;
   position: relative;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .main__box:hover {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .main__box:hover {
   opacity: 0.8;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .main__box:hover::before {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .main__box:hover::before {
   opacity: 1;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .main__box::before {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .main__box::before {
   content: "";
   position: absolute;
   top: 48%;
@@ -1167,7 +1178,7 @@ body {
   /* 好みで色を変えてください */
   opacity: 0;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .sub__wrapper {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .sub__wrapper {
   display: none;
   margin-left: 24px;
   line-height: 16px;
@@ -1188,25 +1199,24 @@ body {
     transform: translateY(0);
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .sub__wrapper .sub__item {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .sub__wrapper .sub__item {
   line-height: 24px;
   display: block;
   margin-top: 16px;
 }
-.shopDetail .shopDetailInner .shopDetail__left .left__nav .sub__wrapper .arrow--active::before {
+.shopDetail .shopDetail__inner .shopDetail__left .left__nav .sub__wrapper .arrow--active::before {
   top: 48%;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav {
   display: none;
   /* ハンバーガーボタン */
-  /* このクラスを、jQueryで付与・削除する */
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__left .ham__nav {
+  .shopDetail .shopDetail__inner .shopDetail__left .ham__nav {
     display: block;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target {
   display: block;
   position: fixed;
   z-index: 3;
@@ -1218,7 +1228,7 @@ body {
   text-align: center;
   /* ナビ開いてる時のボタン */
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line {
   display: block;
   position: absolute;
   width: 30px;
@@ -1227,50 +1237,50 @@ body {
   background: #000;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line1 {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line1 {
   top: 10px;
   width: 50px;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line2 {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line2 {
   top: 25px;
   width: 40px;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line3 {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line3 {
   top: 40px;
   width: 30px;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line--active {
   background-color: #fff;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line1--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line1--active {
   top: 25px;
   width: 40px;
   left: 10px;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line2--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line2--active {
   left: 10px;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .target__line3--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .target__line3--active {
   top: 25px;
   width: 40px;
   left: 10px;
   transition: 0.3s ease-in-out;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(1) {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .active:nth-child(1) {
   transform: translateY(6px);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(2) {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .active:nth-child(2) {
   transform: translateY(-4px);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .ham__target .active:nth-child(3) {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .ham__target .active:nth-child(3) {
   transform: translateY(-14px);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -1283,7 +1293,7 @@ body {
   transition: all 0.6s;
   width: 100%;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper {
   position: relative;
   background: #ccc;
   margin: 0 auto;
@@ -1291,7 +1301,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item {
   list-style-type: none;
   font-size: 1.6rem;
   line-height: 40px;
@@ -1300,23 +1310,23 @@ body {
   border-bottom: 1px solid #fff;
   position: relative;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:last-child {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:last-child {
   padding-bottom: 0;
   border-bottom: none;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover {
   background: #ddd;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover:last-child {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item:hover:last-child {
   background: none;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .item__link {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .item__link {
   display: block;
   color: #000;
   padding: 1em 0;
   text-decoration: none;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box {
   overflow: hidden;
   display: block;
   align-items: center;
@@ -1324,7 +1334,7 @@ body {
   position: relative;
   line-height: 72px;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button {
   position: absolute;
   top: 16px;
   right: 32px;
@@ -1338,13 +1348,13 @@ body {
   -webkit-animation: slidein 1s cubic-bezier(0.19, 1, both 0.3s);
           animation: slidein 1s cubic-bezier(0.19, 1, both 0.3s);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in {
   width: 40px;
   height: 40px;
   position: relative;
   transition: 0.5s cubic-bezier(0.19, 1);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .button__circle {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .button__circle {
   width: 40px;
   height: 40px;
   top: 0;
@@ -1354,7 +1364,7 @@ body {
   z-index: 0;
   border-radius: 50%;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .button__circle::before {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .button__circle::before {
   background: #acacac;
   border: #acacac solid 0.1rem;
   transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1368,7 +1378,7 @@ body {
   left: 0;
   border-radius: 50%;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line1 {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line1 {
   background-color: #fff;
   width: 10px;
   top: 20px;
@@ -1381,7 +1391,7 @@ body {
   transition: 0.2s cubic-bezier(0.19, 1);
   z-index: 1;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line2 {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line2 {
   background-color: #fff;
   width: 1px;
   top: 15px;
@@ -1395,11 +1405,11 @@ body {
   z-index: 1;
   transition: 0.2s;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line2--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .main__box .accordion__button .button__in .line2--active {
   transform: rotate(90deg);
   transition: 0.2s;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box {
   display: none;
   transition: 0.5s;
   -webkit-animation: fadeslidein 0.5s;
@@ -1416,23 +1426,27 @@ body {
     transform: translateY(0);
   }
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item {
   overflow: hidden;
   display: block;
   margin: 0 0 5px;
   padding-left: 16px;
   padding-right: 16px;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item:hover {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item:hover {
   background: #ddd;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .accordion--open {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item .itemSub__link {
+  width: 100%;
   display: block;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .accordion--open {
+  display: block;
+}
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .active {
   transform: translateX(0%);
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .accordion__target {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .accordion__target {
   position: fixed;
   top: 226px;
   left: 0;
@@ -1443,90 +1457,83 @@ body {
   display: none;
   cursor: pointer;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .accordion__target:hover {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .accordion__target:hover {
   background: #fff;
 }
-.shopDetail .shopDetailInner .shopDetail__left .ham__nav .accordion__target--active {
+.shopDetail .shopDetail__inner .shopDetail__left .ham__nav .accordion__target--active {
   display: block;
 }
-.shopDetail .shopDetailInner .shopDetail__center {
+.shopDetail .shopDetail__inner .shopDetail__center {
   margin-left: 170px;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__center {
+  .shopDetail .shopDetail__inner .shopDetail__center {
     margin-left: 0;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll__box {
+.shopDetail .shopDetail__inner .shopDetail__center .scroll__box {
   width: 350px;
 }
 @media screen and (max-width: 850px) {
-  .shopDetail .shopDetailInner .shopDetail__center .scroll__box {
+  .shopDetail .shopDetail__inner .shopDetail__center .scroll__box {
     width: 300px;
   }
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__center .scroll__box {
+  .shopDetail .shopDetail__inner .shopDetail__center .scroll__box {
     display: none;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll__box .scroll__wrapper .img__linkBox {
+.shopDetail .shopDetail__inner .shopDetail__center .scroll__box .scroll__wrapper .img__linkBox .contents_item__img {
   width: 350px;
-}
-.shopDetail .shopDetailInner .shopDetail__center .scroll__box .scroll__wrapper .wp-post-image {
-  width: 100%;
+  height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp {
+.shopDetail .shopDetail__inner .shopDetail__center .arrow__box {
   display: none;
-  height: 300px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .shopDetail .shopDetail__inner .shopDetail__center .arrow__box {
+    display: flex;
+    font-size: 20px;
+  }
+}
+.shopDetail .shopDetail__inner .shopDetail__center .arrow__box .fa-angle-double-right {
+  opacity: 0;
+}
+.shopDetail .shopDetail__inner .shopDetail__center .arrow__box .arrow__right--active {
+  opacity: 10;
+}
+.shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp {
+  display: none;
   margin-top: 64px;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp {
-    display: flex;
+  .shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp {
+    display: block;
     align-items: center;
-    overflow: hidden;
+    overflow-y: hidden;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp {
+.shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp .scroll__wrapperSp {
   display: flex;
   height: 300px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item {
+.shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents_item .img__linkBox {
   width: 300px;
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item .img__link {
-  width: 300px;
+.shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents_item .img__linkBox .contents_item__img {
+  transform: translateY(-25%);
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp .contents__item .img__link .wp-post-image {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.shopDetail .shopDetail__inner .shopDetail__center .scroll-boxSp .scroll__wrapperSp--stop {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
-.shopDetail .shopDetailInner .shopDetail__center .scroll-boxSp .scroll__wrapperSp--stop {
-  -webkit-animation: loop-slide 40s infinite linear 1s both;
-          animation: loop-slide 40s infinite linear 1s both;
-}
-@-webkit-keyframes loop-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes loop-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-.shopDetail .shopDetailInner .shopDetail__right {
+.shopDetail .shopDetail__inner .shopDetail__right {
   width: 30px;
   position: fixed;
   top: 64px;
@@ -1534,7 +1541,7 @@ body {
   z-index: 2;
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__right {
+  .shopDetail .shopDetail__inner .shopDetail__right {
     position: static;
     margin-top: 32px;
     padding: 0 20px 0 20px;
@@ -1543,11 +1550,11 @@ body {
     box-sizing: border-box;
   }
 }
-.shopDetail .shopDetailInner .shopDetail__right .company__text {
+.shopDetail .shopDetail__inner .shopDetail__right .company__text {
   transform: rotate(90deg);
 }
 @media screen and (max-width: 600px) {
-  .shopDetail .shopDetailInner .shopDetail__right .company__text {
+  .shopDetail .shopDetail__inner .shopDetail__right .company__text {
     transform: rotate(0);
   }
 }
@@ -1585,12 +1592,6 @@ body {
 .profileTop .profileTop__inner {
   max-width: 1280px;
   margin: 0 auto;
-}
-.profileTop .profileTop__inner .header__wrapper {
-  max-width: 1280px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
 }
 .profileTop .profileTop__inner .header__wrapper .header__text {
   position: absolute;
@@ -1900,6 +1901,10 @@ body {
 }
 .profileTop .profileTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item:hover {
   background: #ddd;
+}
+.profileTop .profileTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .sub__box .sub__wrapper .sub__item .itemSub__link {
+  display: block;
+  width: 100%;
 }
 .profileTop .profileTop__inner .header__wrapper .ham__nav .globalMenuSp .globalMenuSp__wrapper .nav__item .accordion--open {
   display: block;

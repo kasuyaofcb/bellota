@@ -10,10 +10,6 @@
     margin: 0 auto;
 
     .header__wrapper {
-      max-width: 1280px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
       .header__text {
         position: absolute;
         @media screen and(max-width:600px) {
@@ -325,9 +321,12 @@
                     margin: 0 0 5px;
                     padding-left: 16px;
                     padding-right: 16px;
-
                     &:hover {
                       background: #ddd;
+                    }
+                    .itemSub__link {
+                      display: block;
+                      width: 100%;
                     }
                   }
                 }

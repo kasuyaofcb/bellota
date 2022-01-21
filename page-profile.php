@@ -3,10 +3,10 @@
 <body class="fadein">
 
     <!-- // ここでプロフィールトップのPHPを呼び出す。 -->
-    <?php get_template_part('page-profileTemplates/profileTop'); ?>
+    <?php get_template_part('pages/profileTop'); ?>
 
     <!-- // ここでプロフィールコンテンツのPHPを呼び出す。 -->
-    <?php get_template_part('page-profileTemplates/profileContents'); ?>
+    <?php get_template_part('pages/profileContents'); ?>
 
 
 

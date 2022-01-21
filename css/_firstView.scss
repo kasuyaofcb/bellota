@@ -4,6 +4,7 @@
   background-color: #000;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   .firstView__inner {
     width: 100%;
     height: 100%;
@@ -12,31 +13,43 @@
       // overflow: hidden;
       position: absolute;
       top: 50%;
-      left: 53%; //真ん中よせ微調整
+      left: 50%;
       transform: translate(-50%, -50%);
       width: 400px;
       height: 400px;
       @media screen and(max-width:600px) {
+        width: 300px;
+        height: 300px;
+      }
+      @media screen and(max-width:390px) {
         width: 250px;
         height: 250px;
+        left: 0;
+        transform: translate(0, -50%);
       }
       .swiper-wrapper {
-        // height: 100%;
         text-align: center;
-        // line-height: 300px;
-        .wp-post-image {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
+        .swiper-slide {
+          cursor: pointer;
+          .contents_item__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
     .firstView__logo {
-      position: absolute;
-      bottom: 80px;
-      right: 46px;
+      font-size: 1.6rem;
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
       transform: rotate(90deg);
       color: #fff;
+      @media screen and(max-width:390px) {
+        bottom: 56%;
+        right: 0;
+      }
     }
   }
 }

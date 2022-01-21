@@ -8,6 +8,7 @@
      const swiper = new Swiper(".swiper", {
         direction: 'vertical',
         effect: 'fade',
+        crossFade:true,
         slidesPerView: 1,
         inverse: false,
         loop: true,

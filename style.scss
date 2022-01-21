@@ -13,15 +13,15 @@
 
 //front-page.php用CSS
 
-@use "front-pageTemplates/css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。
+@use "css/firstView"; // ここでファーストビューのCSS(SCSS)を呼び出す。
 
 //page-gallery.php用CSS
-@use "galleryTemplates/css/galleryTop"; // ここでギャラリートップのCSS(SCSS)を呼び出す。
-@use "galleryTemplates/css/galleryContents"; // ここでギャラリーコンテンツのCSS(SCSS)を呼び出す。
+@use "css/galleryTop"; // ここでギャラリートップのCSS(SCSS)を呼び出す。
+@use "css/galleryContents"; // ここでギャラリーコンテンツのCSS(SCSS)を呼び出す。
 
 //page-detailphp用CSS
-@use "page-shop-detailsTemplates/css/details"; // ここで詳細ページのCSS(SCSS)を呼び出す。
+@use "css/shops"; // ここで詳細ページのCSS(SCSS)を呼び出す。
 
 //page-profile.php用CSS
-@use "page-profileTemplates/css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
-@use "page-profileTemplates/css/profileContents"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
+@use "css/profileTop"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
+@use "css/profileContents"; // ここでプロフィールページのCSS(SCSS)を呼び出す。
